@@ -93,7 +93,7 @@ public class HW6 {
         //        Числа, кратные 11, должны быть распечатаны синим цветом.
         //        Числа, кратные 12, должны быть распечатаны красным цветом.
         //        А ноль необходимо распечатать словом ZERO.
-       /* for (int i = -10; i <= 34; i++) {
+      /* for (int i = -10; i <= 34; i++) {
             System.out.print(i + ",");
             if (i % 11 == 0) {
                 System.out.print(i + ",");
@@ -103,6 +103,28 @@ public class HW6 {
                 System.out.println("ZERO");
             }
         }*/
+
+        for (int i = -10; i <= 34; i++) {
+
+            if  (i % 11 == 0){
+
+            }
+                System.out.print(i + ",");
+            if (i % 12 == 0){
+
+            }
+
+            if (i == 0) {
+                System.out.print("ZERO,");
+
+            }
+
+        }
+
+
+
+        System.out.println();
+        line();
 
         task(13);
        // Вывести последовательность 012345678900112233445566778899000…  до числа 9999 включительно.
@@ -146,8 +168,8 @@ public class HW6 {
             if (i % 2 == 0){
                 System.out.println(i);
             } else if (counter == l){
-
             }
+            return i;
         }
     }
     //Task 12
