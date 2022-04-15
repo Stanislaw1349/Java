@@ -93,39 +93,26 @@ public class HW6 {
         //        Числа, кратные 11, должны быть распечатаны синим цветом.
         //        Числа, кратные 12, должны быть распечатаны красным цветом.
         //        А ноль необходимо распечатать словом ZERO.
-      /* for (int i = -10; i <= 34; i++) {
-            System.out.print(i + ",");
-            if (i % 11 == 0) {
-                System.out.print(i + ",");
-            } else if (i % 12 == 0) {
-                System.out.print(i + ",");
-            } else if (i == 0) {
-                System.out.println("ZERO");
+
+       for (int i = -10; i <= 34; i++) {
+            if  (i == 0){
+                System.out.print("\u001B[36m" + "ZERO");
+            } else if (i % 11 == 0) {
+                System.out.print("\u001B[34m" + i);
+            } else if  (i % 12 == 0){
+                System.out.print("\u001B[31m" + i);
             }
-        }*/
-
-        for (int i = -10; i <= 34; i++) {
-
-            if  (i % 11 == 0){
-
-            }
-                System.out.print(i + ",");
-            if (i % 12 == 0){
-
-            }
-
-            if (i == 0) {
-                System.out.print("ZERO,");
-
-            }
-
+           System.out.print( i + " ");
         }
-
-
-
+        System.out.println("\u001B[0m");
         System.out.println();
         line();
 
+       task(10);
+        task10(-1.0, 5.0, 0.5);
+
+        System.out.println();
+        line();
         task(13);
        // Вывести последовательность 012345678900112233445566778899000…  до числа 9999 включительно.
         for (int i = 0; i <= 9999; i++){
@@ -146,13 +133,28 @@ public class HW6 {
     }
 
     // Task 10
-    //Написать метод, который принимает на вход параметры start,  end, step,
-    // и печатает последовательность десятичных  чисел, начиная с числа start, с шагом step.
+    //Написать метод, который принимает на вход параметры start, end, step,
+    // и печатает последовательность десятичных чисел, начиная с числа start, с шагом step.
     // Точка выхода из цикла - число end.
-    public static void intFor(int start, int end, int step){
-        for (int i = start; i <= end; i += step){
-            System.out.println(i);
-        }
+    public static void task10(double start, double end, double step){
+
+            if (step == 0){
+                System.out.println("Error");
+            } else if (start < end){
+                    for (double i  = start; i < end; i += step){
+                        System.out.print(i + ", ");
+                    }
+
+            } else if (start > end){
+                for (double i  = start; i > end; i += step){
+                    System.out.print(i + ", ");
+                }
+            }
+
+
+
+
+
         System.out.println();
         line();
 
