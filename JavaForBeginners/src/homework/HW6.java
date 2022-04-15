@@ -96,15 +96,40 @@ public class HW6 {
 
        for (int i = -10; i <= 34; i++) {
             if  (i == 0){
-                System.out.print("\u001B[36m" + "ZERO");
+                System.out.println("\u001B[36m" + "ZERO");
             } else if (i % 11 == 0) {
-                System.out.print("\u001B[34m" + i);
+                System.out.println("\u001B[34m" + i);
             } else if  (i % 12 == 0){
-                System.out.print("\u001B[31m" + i);
+                System.out.println("\u001B[31m" + i);
             }
-           System.out.print( i + " ");
         }
-        System.out.println("\u001B[0m");
+        System.out.print("\u001B[0m");
+        System.out.println();
+
+        for (int i = -10; i <= 34; i++) {
+            if (i < 0){
+                System.out.print(i + ", ");
+            } else  if  (i == 0) {
+                System.out.print("\u001B[36m" + "ZERO" + ", ");
+                System.out.print("\u001B[0m");
+            } else if (i > 0 && i < 11){
+                System.out.print(i + ", ");
+            } else if (i % 11 == 0) {
+                System.out.print("\u001B[34m" + i +  ", ");
+                System.out.print("\u001B[0m");
+            } else if  (i % 12 == 0){
+                System.out.print("\u001B[31m" + i + ", " );
+                System.out.print("\u001B[0m");
+            } else if (i > 12 && i < 22) {
+                System.out.print(i + ", ");
+                System.out.print("\u001B[0m");
+            } else if (i == 23){
+                System.out.print(i + ", ");
+            } else if (i > 23 ){
+                System.out.print(i + ", ");
+            }
+        }
+        System.out.print("\u001B[0m");
         System.out.println();
         line();
 
@@ -113,6 +138,8 @@ public class HW6 {
 
         System.out.println();
         line();
+
+
         task(13);
        // Вывести последовательность 012345678900112233445566778899000…  до числа 9999 включительно.
         for (int i = 0; i <= 9999; i++){
@@ -150,10 +177,6 @@ public class HW6 {
                     System.out.print(i + ", ");
                 }
             }
-
-
-
-
 
         System.out.println();
         line();
