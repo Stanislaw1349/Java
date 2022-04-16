@@ -187,6 +187,18 @@ public class HW6 {
         sequence17(3);
         line();
 
+        task(18);
+        sequence18(3, 8);
+        line();
+
+        task(19);
+        sequence19();
+        line();
+
+        task(19);
+        sequence19();
+        line();
+
 
     }
 
@@ -283,8 +295,33 @@ public class HW6 {
     // Написать метод, который принимает параметры l, n, и печатает последовательность чисел,
     // начиная с числа n, по формуле для n + 1 члена последовательности:
     // n + 1 = 2n Длина последовательности l.
-    public static void sequence18(int n, int l){
-
+    public static void sequence18(int n, int l) {
+        if (n < l) {
+            System.out.println("[" + n + "]" + " = " + n);
+            for (; n < l; n++) {
+                System.out.println("[" + (n + 1) + "]" + " = " + (2 * n));
+            }
+        } else {
+            System.out.println("Error");
+        }
     }
+
+    //Task 19
+    // Сгенерируйте последовательность целых положительных двузначных чисел, в которых разница между первой цифрой
+    // (десятки) и второй цифрой (единицы) не превышает 3.
+    public static void sequence19() {
+        int des = 0;
+        int ed = 0;
+        for (int i = 10; i < 100; i++) {
+            des = i / 10;
+            ed = i % 10;
+            if (des - ed <= 3 && ed - des <= 3) {
+                System.out.print(i + ", ");
+            }
+        }
+        System.out.println();
+    }
+
+
 }
 
