@@ -199,7 +199,9 @@ public class HW6 {
         sequence19();
         line();
 
-
+        task(20);
+        task20(1.3);
+        line();
     }
 
     // Task 10
@@ -322,6 +324,16 @@ public class HW6 {
         System.out.println();
     }
 
-
+    //Task 20
+    //Написать метод, который вычислит значение функции:
+    public static void task20(double x) {
+        if (x < 1.5) {
+            System.out.println(2.5 * Math.pow(x, 3) + 6 * Math.pow(x, 2) - 30);
+        } else if (x <= 1.5 && x >= 0) {
+            System.out.println(x + 1);
+        } else {
+            System.out.println(x);
+        }
+    }
 }
 
