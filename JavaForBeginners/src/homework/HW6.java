@@ -155,13 +155,33 @@ public class HW6 {
         line();
 
         task(14);
+        //Распечатайте последовательность чисел:
+        //0, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5
+        for (int i = 0; i < 6; i ++){
+            System.out.print(i + ", ");
+            if (i >= 1){
+                System.out.print(i * (-1) + ", ");
+            }
 
+        }
+        System.out.println();
+        line();
 
         task(15);
         //Распечатать последовательность чисел:
         //0, 3, 5, 6, 9, 10, 12, 15, 18, 20, 21, 24, 25
+        for (int i = 0; i < 26; i++){
+            if (i % 3 == 0 || i % 5 == 0){
+                System.out.print(i + ", ");
+            }
+        }
+        System.out.println();
+        line();
 
-
+        task(16);
+        sequenceOdd(3,1,7);
+        System.out.println();
+        line();
     }
 
     // Task 10
@@ -223,13 +243,7 @@ public class HW6 {
         for (int i = 0; i < 10; i++) {
             System.out.print("" + i + i + i + i);
         }
-
     }
-
-    // Task 14
-    //Распечатайте последовательность чисел:
-    //0, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5
-
 
     // Task 16
     //Написать метод, который принимает параметры n, m, l,
@@ -239,11 +253,10 @@ public class HW6 {
         for (int i = n; ; i += m) {
             if (i % 2 != 0) {
                 count++;
-                System.out.println(i);
+                System.out.print(i + ", ");
             } else if (count == l) {
                 break;
             }
-
         }
 
     }
