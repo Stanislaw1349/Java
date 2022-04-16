@@ -155,8 +155,7 @@ public class HW6 {
         line();
 
         task(14);
-        //Распечатайте последовательность чисел:
-        //0, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5
+
 
         task(15);
         //Распечатать последовательность чисел:
@@ -193,14 +192,11 @@ public class HW6 {
     //Task 11
     //Написать метод, который принимает параметр l и печатает последовательность четных чисел от нуля.
     // Длина последовательности = l.
-    public static int sequenceEven(int l) {
+    public static void sequenceEven(int l) {
         int counter = 0;
-        for (int i = l; ; i += 2) {
-            if (i % 2 == 0) {
-                System.out.println(i);
-            } else if (counter == l) {
-            }
-            return i;
+        for (int i = 0; counter < l; i += 2) {
+            System.out.print(i + ", ");
+            counter++;
         }
     }
 
@@ -229,6 +225,10 @@ public class HW6 {
         }
 
     }
+
+    // Task 14
+    //Распечатайте последовательность чисел:
+    //0, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5
 
 
     // Task 16
