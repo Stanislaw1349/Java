@@ -94,12 +94,12 @@ public class HW6 {
         //        Числа, кратные 12, должны быть распечатаны красным цветом.
         //        А ноль необходимо распечатать словом ZERO.
 
-       for (int i = -10; i <= 34; i++) {
-            if  (i == 0){
+        for (int i = -10; i <= 34; i++) {
+            if (i == 0) {
                 System.out.println("\u001B[36m" + "ZERO");
             } else if (i % 11 == 0) {
                 System.out.println("\u001B[34m" + i);
-            } else if  (i % 12 == 0){
+            } else if (i % 12 == 0) {
                 System.out.println("\u001B[31m" + i);
             }
         }
@@ -107,25 +107,25 @@ public class HW6 {
         System.out.println();
 
         for (int i = -10; i <= 34; i++) {
-            if (i < 0){
+            if (i < 0) {
                 System.out.print(i + ", ");
-            } else  if  (i == 0) {
+            } else if (i == 0) {
                 System.out.print("\u001B[36m" + "ZERO" + ", ");
                 System.out.print("\u001B[0m");
-            } else if (i > 0 && i < 11){
+            } else if (i > 0 && i < 11) {
                 System.out.print(i + ", ");
             } else if (i % 11 == 0) {
-                System.out.print("\u001B[34m" + i +  ", ");
+                System.out.print("\u001B[34m" + i + ", ");
                 System.out.print("\u001B[0m");
-            } else if  (i % 12 == 0){
-                System.out.print("\u001B[31m" + i + ", " );
+            } else if (i % 12 == 0) {
+                System.out.print("\u001B[31m" + i + ", ");
                 System.out.print("\u001B[0m");
             } else if (i > 12 && i < 22) {
                 System.out.print(i + ", ");
                 System.out.print("\u001B[0m");
-            } else if (i == 23){
+            } else if (i == 23) {
                 System.out.print(i + ", ");
-            } else if (i > 23 ){
+            } else if (i > 23) {
                 System.out.print(i + ", ");
             }
         }
@@ -133,22 +133,28 @@ public class HW6 {
         System.out.println();
         line();
 
-       task(10);
+        task(10);
         task10(-1.0, 5.0, 0.5);
 
         System.out.println();
         line();
 
-
-        task(13);
-       // Вывести последовательность 012345678900112233445566778899000…  до числа 9999 включительно.
-        for (int i = 0; i <= 9999; i++){
-            System.out.print(i);
-        }
+        task(11);
+        sequenceEven(8);
         System.out.println();
         line();
 
-        task(14 );
+        task(12);
+        degreeN(8);
+        System.out.println();
+        line();
+
+        task(13);
+        print9999();
+        System.out.println();
+        line();
+
+        task(14);
         //Распечатайте последовательность чисел:
         //0, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5
 
@@ -163,58 +169,78 @@ public class HW6 {
     //Написать метод, который принимает на вход параметры start, end, step,
     // и печатает последовательность десятичных чисел, начиная с числа start, с шагом step.
     // Точка выхода из цикла - число end.
-    public static void task10(double start, double end, double step){
+    public static void task10(double start, double end, double step) {
 
-            if (step == 0){
-                System.out.println("Error");
-            } else if (start < end){
-                    for (double i  = start; i < end; i += step){
-                        System.out.print(i + ", ");
-                    }
-
-            } else if (start > end){
-                for (double i  = start; i > end; i += step){
-                    System.out.print(i + ", ");
-                }
+        if (step == 0) {
+            System.out.println("Error");
+        } else if (start < end) {
+            for (double i = start; i < end; i += step) {
+                System.out.print(i + ", ");
             }
+
+        } else if (start > end) {
+            for (double i = start; i > end; i += step) {
+                System.out.print(i + ", ");
+            }
+        }
 
         System.out.println();
         line();
 
 
-
     }
+
     //Task 11
-    //Написать метод, который принимает параметр l и печатает  последовательность четных чисел от нуля.
+    //Написать метод, который принимает параметр l и печатает последовательность четных чисел от нуля.
     // Длина последовательности = l.
-    public static int sequenceEven(int l){
-        int counter =0;
-        for (int i = l; ; i++){
-            if (i % 2 == 0){
+    public static int sequenceEven(int l) {
+        int counter = 0;
+        for (int i = l; ; i += 2) {
+            if (i % 2 == 0) {
                 System.out.println(i);
-            } else if (counter == l){
+            } else if (counter == l) {
             }
             return i;
         }
     }
+
     //Task 12
     //Напишите метод, который принимает целое число n, и выводит все степени числа 2 от 1 до n включительно
-    public static void degreeN (int n){
-        for (int i = 1; i <= n; i = 2 * i){
-           System.out.print(i + ",");
+    public static void degreeN(int n) {
+        for (int i = 1; i <= n; i++) {
+            System.out.println(String.format("%2.0f", Math.pow(2, i)));
         }
     }
+
+    //Task 13
+    // Вывести последовательность 012345678900112233445566778899000…  до числа 9999 включительно.
+    public static void print9999() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println("" + i);
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println("" + i + i);
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println("" + i + i + i);
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println("" + i + i + i + i);
+        }
+        System.out.println();
+    }
+
 
     // Task 16
     //Написать метод, который принимает параметры n, m, l,
     // и печатает последовательность нечетных чисел начиная с числа n, с шагом m, длина последовательности l.
-    public static void sequenceOdd (int n, int m, int l){
+    public static void sequenceOdd(int n, int m, int l) {
         int count = 0;
-        for (int i = n; ; i += m){
-            if (i % 2 != 0){
-                count ++;
+        for (int i = n; ; i += m) {
+            if (i % 2 != 0) {
+                count++;
                 System.out.println(i);
-        } else if  (count == l){
+            } else if (count == l) {
                 break;
             }
 
