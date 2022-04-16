@@ -157,9 +157,9 @@ public class HW6 {
         task(14);
         //Распечатайте последовательность чисел:
         //0, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5
-        for (int i = 0; i < 6; i ++){
+        for (int i = 0; i < 6; i++) {
             System.out.print(i + ", ");
-            if (i >= 1){
+            if (i >= 1) {
                 System.out.print(i * (-1) + ", ");
             }
 
@@ -170,8 +170,8 @@ public class HW6 {
         task(15);
         //Распечатать последовательность чисел:
         //0, 3, 5, 6, 9, 10, 12, 15, 18, 20, 21, 24, 25
-        for (int i = 0; i < 26; i++){
-            if (i % 3 == 0 || i % 5 == 0){
+        for (int i = 0; i < 26; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
                 System.out.print(i + ", ");
             }
         }
@@ -179,9 +179,15 @@ public class HW6 {
         line();
 
         task(16);
-        sequenceOdd(3,1,7);
+        sequenceOdd(2, 1, 10);
         System.out.println();
         line();
+
+        task(17);
+        sequence17(3);
+        line();
+
+
     }
 
     // Task 10
@@ -249,6 +255,9 @@ public class HW6 {
     //Написать метод, который принимает параметры n, m, l,
     // и печатает последовательность нечетных чисел начиная с числа n, с шагом m, длина последовательности l.
     public static void sequenceOdd(int n, int m, int l) {
+        if (n % 2 == 0 && m % 2 == 0) {
+            System.out.println("Error, все числа четные");
+        }
         int count = 0;
         for (int i = n; ; i += m) {
             if (i % 2 != 0) {
@@ -258,6 +267,23 @@ public class HW6 {
                 break;
             }
         }
+    }
+
+    //Task 17
+    // Сгенерируйте и распечатайте последовательность по формуле:
+    // n + 1 = n + 2
+    public static void sequence17(int n) {
+        int l = n + 5;
+        for (; n < l; n++) {
+            System.out.println("[" + (n + 1) + "]" + " = " + (n + 2));
+        }
+    }
+
+    //Task 18
+    // Написать метод, который принимает параметры l, n, и печатает последовательность чисел,
+    // начиная с числа n, по формуле для n + 1 члена последовательности:
+    // n + 1 = 2n Длина последовательности l.
+    public static void sequence18(int n, int l){
 
     }
 }
