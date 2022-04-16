@@ -216,18 +216,18 @@ public class HW6 {
     // Вывести последовательность 012345678900112233445566778899000…  до числа 9999 включительно.
     public static void print9999() {
         for (int i = 0; i < 10; i++) {
-            System.out.println("" + i);
+            System.out.print("" + i);
         }
         for (int i = 0; i < 10; i++) {
-            System.out.println("" + i + i);
+            System.out.print("" + i + i);
         }
         for (int i = 0; i < 10; i++) {
-            System.out.println("" + i + i + i);
+            System.out.print("" + i + i + i);
         }
         for (int i = 0; i < 10; i++) {
-            System.out.println("" + i + i + i + i);
+            System.out.print("" + i + i + i + i);
         }
-        System.out.println();
+
     }
 
 
