@@ -10,14 +10,6 @@ public abstract class Employee {
     Классы Manager и Director должны быть финальными
 */
 
-    /*Задача №1
-    Необходимо создать класс Employee со следующими методами:
-    getBaseSalary - получить базовую ставку
-    setBaseSalary
-    getName - получить имя
-    setName
-    getSalary - получить зарплату*/
-
     private String name;
     private int BaseSalary;
     private int Salary;

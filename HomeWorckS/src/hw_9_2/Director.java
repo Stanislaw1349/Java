@@ -1,20 +1,15 @@
-/*
 package hw_9_2;
 
-public class Director extends Manager {
+public final class Director extends BaseManager {
 
-    public Director(String name, int baseSalary) {
-        super(name, baseSalary);
+    public static final int MULTIPLIER_DIRECTOR = 9;
+
+    public Director(String name, int baseSalary, int numberOfSubordinates) {
+        super(name, baseSalary, numberOfSubordinates);
     }
 
     @Override
-    public int getSalary() {
-        if (numberOfSubordinates == 0){
-            return super.getSalary();
-        } else {
-            return getBaseSalary() * (numberOfSubordinates / 100 * 9);
-        }
-
+    protected int getMultiplier() {
+        return MULTIPLIER_DIRECTOR;
     }
 }
-*/

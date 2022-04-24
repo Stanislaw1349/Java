@@ -1,33 +1,18 @@
-/*
 package hw_9_2;
 
-public class Manager extends Worker {
+public final class Manager extends BaseManager {
 
-    int numberOfSubordinates;
+    public static final int MULTIPLIER_MANAGER = 3;
 
-    public Manager(String name, int baseSalary) {
-        super(name, baseSalary);
-    }
-
-    public int getNumberOfSubordinates() {
-        return numberOfSubordinates;
-    }
-
-    public void setNumberOfSubordinates(int numberOfSubordinates) {
-        this.numberOfSubordinates = numberOfSubordinates;
+    public Manager(String name, int baseSalary, int numberOfSubordinates) {
+        super(name, baseSalary, numberOfSubordinates);
     }
 
     @Override
-    public int getSalary() {
-      if (numberOfSubordinates == 0){
-          return super.getSalary();
-      } else {
-          return getBaseSalary() * (numberOfSubordinates / 100 * 3);
-      }
-
+    protected int getMultiplier() {
+        return MULTIPLIER_MANAGER;
     }
 }
 
 
 
-*/
