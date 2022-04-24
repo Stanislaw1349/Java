@@ -1,4 +1,4 @@
-package hw_9_2;
+package hw_9_2_1;
 
 public final class Director extends BaseManager {
 
