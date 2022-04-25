@@ -13,7 +13,7 @@ public class HW7 {
         System.out.println("________________________");
     }
 
-    public static double getmidValue(int[] array) {
+    public static double getMidValue(int[] array) {
         double midValue = 0.0;
         for (int i = 0; i < array.length; i++) {
             midValue += array[i];
@@ -40,7 +40,7 @@ public class HW7 {
         line();
 
         task(2);
-        //В массиве catsNames изменить значение элемента с индексом 4 на “Рыжик”,  а значение элемента с индексом 1 на “Черныш”.
+        //В массиве catsNames изменить значение элемента с индексом 4 на “Рыжик”, а значение элемента с индексом 1 на “Черныш”.
         catsNames[1] = "Черныш";
         catsNames[4] = "Рыжик";
         Stream.of(catsNames).forEach(System.out::println);
@@ -252,22 +252,19 @@ public class HW7 {
         //Написать метод, который принимает на вход массив int, и возвращает среднее значение.
         //Проверить работу метода тестом, если параметр - массив catsAges
         System.out.println(Arrays.toString(catsAges));
+        System.out.printf("%.2f", getMidValue(catsAges));
         System.out.println();
         line();
+
         task(19);
         //Создать массив нечетных отрицательных чисел в промежутке от -1000 до -900.
-        int count19 = 0;
-        for (int i = -1000; i < -900; i++) {
-            if (i % 2 != 0) {
-                count19++;
-            }
-            int[] array19 = new int[count19];
-            /*for (int i = 0, j = -1000; i < array19.length; i++, j += 2) {
-                array19[i] = j;
-                System.out.print(array[i] + " ");
-            }
-            System.out.println();*/
 
+        for (int i = -999; i < -900; i += 2) {
+
+            System.out.print(i + " ");
         }
+        System.out.println();
+        line();
+
     }
 }
