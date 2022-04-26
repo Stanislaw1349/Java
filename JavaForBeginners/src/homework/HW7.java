@@ -301,7 +301,7 @@ public class HW7 {
         //максимальное значение и среднее значение всех чисел массива. Проверить работу метода на массиве из задания 20.
         System.out.println(Arrays.toString(getTask21arr(array)));
         int[] test21 = getTask21arr(randomArray);
-        for (int i = 0; i < test21.length; i ++){
+        for (int i = 0; i < test21.length; i++) {
             System.out.print(test21[i] + " ");
         }
         System.out.println();
@@ -313,17 +313,35 @@ public class HW7 {
         int evenLength = 0;
         int oddLength = 0;
 
-        for (int i = 0; i < randomArray.length; i++){
-        if (randomArray[i] % 2 ==0){
-            evenLength ++;
-        } else {
-            oddLength ++;
+        for (int i = 0; i < randomArray.length; i++) {
+            if (randomArray[i] % 2 == 0) {
+                evenLength++;
+            } else {
+                oddLength++;
+            }
         }
-        }
-        int [] even = new int[evenLength];
-        int [] odd = new  int[oddLength];
+        int[] even = new int[evenLength];
+        int[] odd = new int[oddLength];
         int evenCount = 0;
         int oddCount = 0;
+
+        for (int i = 0; i < randomArray.length; i++) {
+            if (randomArray[i] % 2 == 0) {
+                even[evenCount] = randomArray[i];
+                evenCount++;
+            } else {
+                odd[oddCount] = randomArray[i];
+                oddCount++;
+            }
+        }
+        System.out.println(Arrays.toString(even));
+        System.out.println(Arrays.toString(odd));
+        line();
+
+        task(23);
+        //Создать двумерный массив, который состоит из имен, возрастов, цветов котов:
+
+
 
     }
 }
