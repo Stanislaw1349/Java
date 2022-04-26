@@ -21,6 +21,27 @@ public class HW7 {
         return midValue / array.length;
     }
 
+    public static int[] getTask21arr(int[] arr) {
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        int aver;
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+            sum += arr[i];
+        }
+        aver = sum / arr.length;
+
+        int[] array = {min, max, aver};
+
+        return array;
+    }
+
     public static void main(String[] args) {
 
         task(1);
@@ -260,11 +281,49 @@ public class HW7 {
         //Создать массив нечетных отрицательных чисел в промежутке от -1000 до -900.
 
         for (int i = -999; i < -900; i += 2) {
-
             System.out.print(i + " ");
         }
         System.out.println();
         line();
+
+        task(20);
+        //Создать массив из 10 случайных положительных целых чисел
+        int[] randomArray = new int[10];
+        for (int i = 0; i < randomArray.length; i++) {
+            randomArray[i] = ((int) (Math.random() * Integer.MAX_VALUE));
+            System.out.print(randomArray[i] + " ");
+            System.out.println();
+        }
+        line();
+
+        task(21);
+        //Создать метод, который принимает на вход массив int, и возвращает минимальное значение,
+        //максимальное значение и среднее значение всех чисел массива. Проверить работу метода на массиве из задания 20.
+        System.out.println(Arrays.toString(getTask21arr(array)));
+        int[] test21 = getTask21arr(randomArray);
+        for (int i = 0; i < test21.length; i ++){
+            System.out.print(test21[i] + " ");
+        }
+        System.out.println();
+        line();
+
+        task(22);
+        //Создать массив четных чисел и массив нечетных чисел из элементов массива из задания 20.
+
+        int evenLength = 0;
+        int oddLength = 0;
+
+        for (int i = 0; i < randomArray.length; i++){
+        if (randomArray[i] % 2 ==0){
+            evenLength ++;
+        } else {
+            oddLength ++;
+        }
+        }
+        int [] even = new int[evenLength];
+        int [] odd = new  int[oddLength];
+        int evenCount = 0;
+        int oddCount = 0;
 
     }
 }
