@@ -84,7 +84,7 @@ public class HW7 {
 
         task(4);
         // Создать массив catsAges и заполнить его любыми значениями.
-        int[] catsAges = {1, 3, 5, 4, 2, 6, 8};
+        int[] catsAges = {1, 3, 5, 4, 2, 6, 8, 7};
         System.out.println(Arrays.toString(catsAges));
 
         task(5);
@@ -160,14 +160,12 @@ public class HW7 {
         if ((catsNames.length == catsColors.length) && (catsNames.length == catsAges.length)) {
 
         }
-       /* for (int i = 0; i < catsNames.length; i++) {
+        for (int i = 0; i < catsNames.length; i++) {
 
             if (i == (catsNames.length - 1)) {
-                System.out.println(catsNames[i] + catsColors[i] + catsAges[i]);
+                System.out.println(catsNames[i] + " " + catsColors[i] + " " + catsAges[i]);
             }
-
-
-        }*/
+        }
         line();
 
         task(10);
@@ -326,10 +324,10 @@ public class HW7 {
         int oddCount = 0;
 
         for (int i = 0; i < randomArray.length; i++) {
-            if (randomArray[i] % 2 == 0) {
+            if (randomArray[i] % 2 == 0 && evenCount < even.length) {
                 even[evenCount] = randomArray[i];
                 evenCount++;
-            } else {
+            } else if (oddCount < odd.length) {
                 odd[oddCount] = randomArray[i];
                 oddCount++;
             }
@@ -340,8 +338,38 @@ public class HW7 {
 
         task(23);
         //Создать двумерный массив, который состоит из имен, возрастов, цветов котов:
+        //Распечатать все данные котов в коробках с четными индексами, используя двумерный массив.
 
+        String[][] arr2DCats = new String[3][8];
 
+       /* if (catsNames.length == arr2DCats[0].length
+                && catsAges.length == arr2DCats[0].length
+                && catsColors.length == arr2DCats[0].length) {
+            for (int i = 0; i < arr2DCats[0].length; i++) {
+                arr2DCats[0][i] = catsNames[i];
+                System.out.print(arr2DCats[0][i]);
+                arr2DCats[1][i] = String.valueOf(catsAges[i]);
+                System.out.print(arr2DCats[1][i]);
+                arr2DCats[2][i] = catsColors[i];
+                System.out.println(arr2DCats[2][i]);
+            }
+        }*/
+        for (int i = 0; i < arr2DCats.length; i ++){
+            for (int j = 0; j < arr2DCats[0].length; j++){
+                if (i == 0){
+                    arr2DCats[i][j] = catsNames[j];
+                } else  if (i == 1){
+                    arr2DCats[i][j] = String.valueOf(catsAges[j]);
+                } else {
+                    arr2DCats[i][j] = catsColors[j];
+                }
+            }
+        }
+        System.out.println(Arrays.deepToString(arr2DCats));
+        line();
+
+        task(24);
+        //Создать двумерный массив целых случайных чисел от 1 до 10 размерности 4*8.
 
     }
 }
