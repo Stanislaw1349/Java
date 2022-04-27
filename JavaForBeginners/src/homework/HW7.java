@@ -354,11 +354,11 @@ public class HW7 {
                 System.out.println(arr2DCats[2][i]);
             }
         }*/
-        for (int i = 0; i < arr2DCats.length; i ++){
-            for (int j = 0; j < arr2DCats[0].length; j++){
-                if (i == 0){
+        for (int i = 0; i < arr2DCats.length; i++) {
+            for (int j = 0; j < arr2DCats[0].length; j++) {
+                if (i == 0) {
                     arr2DCats[i][j] = catsNames[j];
-                } else  if (i == 1){
+                } else if (i == 1) {
                     arr2DCats[i][j] = String.valueOf(catsAges[j]);
                 } else {
                     arr2DCats[i][j] = catsColors[j];
@@ -371,5 +371,27 @@ public class HW7 {
         task(24);
         //Создать двумерный массив целых случайных чисел от 1 до 10 размерности 4*8.
 
+        int[][] array24 = new int[4][8];
+        for (int i = 0; i < array24.length; i++) {
+            for (int j = 0; j < array24[i].length; j++) {
+                array24[i][j] = (int) (Math.random() * 10) + 1;
+                System.out.print(array24[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        // System.out.println(Arrays.deepToString(array24));
+        line();
+
+        task(25);
+        //Вывести сумму всех четных чисел массива из задания 24.
+        int sum25 = 0;
+        for (int i = 0; i < array24.length; i++) {
+            for (int j = 0; j < array24[i].length; j++) {
+                if (array24[i][j] % 2 == 0) {
+                    sum25 += array24[i][j];
+                }
+            }
+        }
+        System.out.println(sum25);
     }
 }
