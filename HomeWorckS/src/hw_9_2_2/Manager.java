@@ -1,6 +1,6 @@
 package hw_9_2_2;
 
-public class Manager extends Employee {
+public final class Manager extends BaseEmployee {
 
    public Manager(String name, int age, char gender, double salaryPerDay) {
        super(name, age, gender, salaryPerDay);
@@ -18,7 +18,6 @@ public class Manager extends Employee {
     @Override
     public double getSalary(Month[] monthArray) {
         double sum = super.getSalary(monthArray);
-        return sum + (sum * getNumberOfSubordinates() * 0.01);
-
+        return sum + (sum * getNumberOfSubordinates() * 10 / 100);
     }
 }

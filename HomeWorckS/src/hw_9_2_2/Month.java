@@ -1,6 +1,6 @@
 package hw_9_2_2;
 
-public class Month {
+ final class Month {
 
     private final String month;
     private final int day;

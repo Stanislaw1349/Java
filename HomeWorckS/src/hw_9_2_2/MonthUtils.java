@@ -1,10 +1,7 @@
 package hw_9_2_2;
 
-public class MonthUtils extends Month {
+public class MonthUtils {
 
-    public MonthUtils(String month, int day, int worksDay) {
-        super(month, day, worksDay);
-    }
 
     public static final Month[] MONTHS = {
             new Month("January", 31, 20),
@@ -20,5 +17,4 @@ public class MonthUtils extends Month {
             new Month("November", 30, 21),
             new Month("December", 31, 22),
     };
-
 }
