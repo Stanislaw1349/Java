@@ -12,7 +12,7 @@ public class Worker extends Employee {
     }
 
     @Override
-    public int getSalary() {
+    public double getSalary() {
         return 0;
     }
 }

@@ -2,6 +2,8 @@ package hw_9_2_1;
 
 public abstract class BaseManager extends Worker{
 
+    private static final int MULTIPLIER = 3;
+
      private int numberOfSubordinates;
 
     public BaseManager(String name, int baseSalary, int numberOfSubordinates) {
@@ -17,14 +19,12 @@ public abstract class BaseManager extends Worker{
         this.numberOfSubordinates = numberOfSubordinates;
     }
 
-    protected abstract int getMultiplier();
-
     @Override
-    public int getSalary() {
+    public double getSalary() {
         if (numberOfSubordinates == 0){
             return super.getSalary();
         } else {
-            return getBaseSalary() * (numberOfSubordinates / 100 * getMultiplier());
+            return getBaseSalary() * (getNumberOfSubordinates() / 100.0 * MULTIPLIER);
         }
     }
 }

@@ -31,7 +31,7 @@ public abstract class Employee {
         return BaseSalary;
     }
 
-    public abstract int getSalary();
+    public abstract double getSalary();
 
     public void setSalary(int salary) {
         Salary = salary;
