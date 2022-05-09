@@ -30,23 +30,27 @@ public class HW8 {
 
     //7
     public static int[] createArray(int a, int b, int c, int d, int e) {
+
         return new int[]{a, b, c, d, e};
     }
 
     //8
     public static double[] createArray(double a, double b, double c, double d, double e) {
+
         return new double[]{a, b, c, d, e};
 
     }
 
     //9
     public static String[] createArray(String a, String b, String c, String d, String e) {
+
         return new String[]{a, b, c, d, e};
     }
 
     //10
     public static double[] getIntArrMult(int[] arr) {
         if (nullArray(arr) && containNegative(arr)) {
+
             return null;
         }
 
@@ -54,12 +58,14 @@ public class HW8 {
         for (int i = 0; i < arr.length; i++) {
             res[i] = (arr[i] * 2.5);
         }
+
         return res;
     }
 
     //11
     public static int getEvenArray(int[] arr) {
         if (nullArray(arr) && containNegative(arr)) {
+
             return 0;
         }
 
@@ -69,12 +75,14 @@ public class HW8 {
                 count++;
             }
         }
+
         return count;
     }
 
     //12
     public static int[] returnOddArray(int[] arr) {
         if (nullArray(arr) && containNegative(arr)) {
+
             return null;
         }
 
@@ -99,6 +107,7 @@ public class HW8 {
 
     public static int[] returnEvenArray(int[] arr) {
         if (nullArray(arr) && containNegative(arr)) {
+
             return null;
         }
 
@@ -125,6 +134,7 @@ public class HW8 {
     //13
     public static boolean[] getBooleanArray(int[] arr) {
        /* if (nullArray(arr)) {
+
             return null;
         }*/
         boolean[] arrBoolean = new boolean[arr.length];
@@ -135,6 +145,7 @@ public class HW8 {
                 arrBoolean[i] = false;
             }
         }
+
         return arrBoolean;
     }
 
@@ -144,6 +155,7 @@ public class HW8 {
         for (int i = 0; i < arr.length; i++) {
             str += arr[i] + " ";
         }
+
         return str;
     }
 
@@ -156,6 +168,7 @@ public class HW8 {
         for (int i = arr.length / 2; i < arr.length; i++) {
             sum2half += arr[i];
         }
+
         return sum2half;
     }
 
@@ -167,20 +180,24 @@ public class HW8 {
                 arrMult[i] = i * a;
             }
         }
+
         return arrMult;
     }
 
     //17
 
     public static int[] returnHalfLifeArray(int[] arr) {
-      /*   if (nullArray(arr)) {
+       if (nullArray(arr)) {
             return null;
-        }*/
+        }
         if (countOddAray(arr) > countEvenAray(arr)) {
+
             return returnOddArray(arr);
         } else if (countOddAray(arr) < countEvenAray(arr)) {
+
             return returnEvenArray(arr);
         } else {
+
             return new int[]{};
         }
     }
@@ -188,12 +205,14 @@ public class HW8 {
     //18
     public static int[] generateRandomArr(int length) {
         if (length < 0) {
+
             return null;
         }
         int[] array = new int[length];
         for (int i = 0; i < length; i++) {
             array[i] = (int) (Math.random() * 99) + 1;
         }
+
         return array;
     }
 
@@ -203,6 +222,7 @@ public class HW8 {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = randomIntArray((int) Math.pow(10, d - 1) * 10, (int) Math.pow(10, d - 1));
         }
+
         return arr;
     }
 
@@ -218,6 +238,7 @@ public class HW8 {
                 }
             }
         } else {
+
             return null;
         }
 
@@ -230,6 +251,7 @@ public class HW8 {
                 count1++;
             }
         }
+
         return arr1;
     }
 
@@ -240,12 +262,14 @@ public class HW8 {
             // arr[i] = array[i] / 10 * 10 - array[i] % 10;
             arr[i] = Math.abs(array[i] / 10 - array[i] % 10);
         }
+
         return arr;
     }
 
     //22
     public static String[] getArrPhoneNum(int[] arr) {
         if (arr == null || arr.length == 0) {
+
             return null;
         }
 
@@ -274,18 +298,21 @@ public class HW8 {
                 } else if (arr[0] == 9) {
                     number[1] = "\"Turkey\"";
                 } else {
+
                     return null;
                 }
 
             }
 
         }
+
         return number;
     }
 
     //23
     public static int[] getUniqueArray(int[] arr) {
         if (containNegative(arr)) {
+
             return null;
         }
         int[] unic = {};
@@ -312,6 +339,7 @@ public class HW8 {
                 count++;
             }
         }
+
         return unic;
     }
 
@@ -330,14 +358,55 @@ public class HW8 {
                     }
                 }
             }
+
             return new int[]{arr.length - count, count};
         }
+
         return new int[]{};
     }
 
-    public static int[] getArrayBetweenIndex(){
+    //25
+    public static int[] getArrayBetweenIndex(int[] arr, int start, int end) {
+        if (start >= 0 && end >= 0) {
+            if (start <= arr.length - 1 && end <= arr.length - 1
+                    && start <= end) {
+                int[] array = new int[end - start + 1];
+                for (int i = 0; i < array.length; i++) {
+                    if (arr[start] >= 0) {
+                        array[i] = arr[start];
+                        start++;
+                    } else {
 
+                        return new int[0];
+                    }
+                }
 
+                return array;
+            } else {
+
+                return new int[0];
+            }
+        }
+
+        return new int[0];
+    }
+
+    //26
+    public static int[] getUnique2Array(int[] arr1, int[] arr2) {
+        if (arr1 == null || arr2 == null || (arr1.length == 0 && arr2.length == 0)) {
+
+            return null;
+        } else {
+            int[] arrayUnique = new int[arr1.length + arr2.length];
+            for (int i = 0; i < arr1.length; i++) {
+                arrayUnique[i] = arr1[i];
+            }
+            for (int i = 0; i < arr2.length; i++) {
+                arrayUnique[arr1.length + i] = arr2[i];
+            }
+            
+            return getUniqueArray(arrayUnique);
+        }
     }
 
     public static void main(String[] args) {
@@ -483,8 +552,13 @@ public class HW8 {
         //между индексами.
         //Например:
         //method({1, 2, 3, 4, 5}, 1, 3) ->{2, 3, 4}
+        System.out.println(Arrays.toString(getArrayBetweenIndex(arr23, 2, 6)));
 
-
+        task(26);
+        //Написать метод, который принимает на вход 2 массива int[] и возвращает объединенный массив уникальных
+        //неповторяющихся элементов
+        int[] arr26_1 = {1, 33, 45, 67, 77, 95, 45, 7, 84};
+        int[] arr26_2 = {1, 32, 42, 40, 77, 5, 5, 10, 84};
+        System.out.println(Arrays.toString(getUnique2Array(arr26_1, arr26_2)));
     }
-
 }
