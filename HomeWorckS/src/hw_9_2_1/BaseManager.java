@@ -19,12 +19,14 @@ public abstract class BaseManager extends Worker{
         this.numberOfSubordinates = numberOfSubordinates;
     }
 
+    protected abstract int getMultiplier();
+
     @Override
     public double getSalary() {
         if (numberOfSubordinates == 0){
             return super.getSalary();
         } else {
-            return getBaseSalary() * (getNumberOfSubordinates() / 100.0 * MULTIPLIER);
+            return getBaseSalary() * (getNumberOfSubordinates() / 100.0 * getMultiplier());
         }
     }
 }

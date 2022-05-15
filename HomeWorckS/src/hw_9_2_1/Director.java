@@ -9,11 +9,7 @@ public final class Director extends BaseManager {
     }
 
     @Override
-    public double getSalary() {
-        if (getNumberOfSubordinates() == 0) {
-            return getBaseSalary();
-        } else {
-            return getBaseSalary() * (getNumberOfSubordinates() / 100.0 * MULTIPLIER);
-        }
+    public int getMultiplier() {
+        return MULTIPLIER;
     }
 }
