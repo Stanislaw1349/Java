@@ -8,7 +8,6 @@ import java.util.List;
 //Задача №2
 //Создать лист со значениями от 100 до 1000.
 
-
 public class Task_13_2 {
     public static void main(String[] args) {
 
