@@ -1,2 +1,0 @@
-default.username=tester88@tester.test
-default.password=oi92ik4uXm
